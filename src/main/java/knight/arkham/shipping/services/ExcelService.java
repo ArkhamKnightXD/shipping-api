@@ -6,26 +6,22 @@ import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 import org.springframework.stereotype.Service;
 import java.io.FileInputStream;
 import java.io.IOException;
-import java.util.Iterator;
 
 @Service
 public class ExcelService {
 
-    public void readExcelFile(String filenamePath){
+//    Todo no me lee las celdas que utilizan formulas, esto podria ser un problema.
+    public void readExcelFile(String filenamePath, String sheetName){
         try {
 
             var file = new FileInputStream(filenamePath);
 
             var workbook = new XSSFWorkbook(file);
-            var firstSheet = workbook.getSheet("Gastos de mi pago quincenal");
+            var firstSheet = workbook.getSheet(sheetName);
 
             for (Row nextRow : firstSheet) {
 
-                Iterator<Cell> cellIterator = nextRow.cellIterator();
-
-                while (cellIterator.hasNext()) {
-
-                    Cell cell = cellIterator.next();
+                for (Cell cell : nextRow) {
 
                     switch (cell.getCellType()) {
                         case STRING:
