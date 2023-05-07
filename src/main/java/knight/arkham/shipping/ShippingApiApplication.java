@@ -2,9 +2,7 @@ package knight.arkham.shipping;
 
 import io.swagger.v3.oas.annotations.OpenAPIDefinition;
 import io.swagger.v3.oas.annotations.info.Info;
-import knight.arkham.shipping.services.JsoupService;
-import org.jsoup.Jsoup;
-import org.jsoup.nodes.Document;
+import knight.arkham.shipping.services.ExcelService;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -20,9 +18,10 @@ public class ShippingApiApplication {
 
 
     @Bean
-    public CommandLineRunner startup(JsoupService jsoupService) {
+    public CommandLineRunner startup(ExcelService excelService) {
         return args -> {
 
+            excelService.readExcelFile("C:\\Presupuesto-mensual.xlsx");
         };
     }
 }

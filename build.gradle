@@ -30,6 +30,10 @@ dependencies {
     implementation group: 'org.jsoup', name: 'jsoup', version: '1.13.1'
 
     testImplementation 'org.springframework.boot:spring-boot-starter-test:2.6.7'
+
+//    Librerías encargadas del manejo de lectura de excel
+    implementation 'org.apache.poi:poi:5.2.2'
+    implementation 'org.apache.poi:poi-ooxml:5.2.2'
 }
 
 tasks.named('test') {
