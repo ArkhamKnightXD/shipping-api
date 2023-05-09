@@ -21,7 +21,7 @@ public class ShippingApiApplication {
     public CommandLineRunner startup(ExcelService excelService) {
         return args -> {
 
-            excelService.readExcelFile("C:\\Presupuesto-mensual.xlsx", "Gastos de mi pago quincenal");
+            excelService.readExcelFile("test.xlsx", "Hoja 1");
         };
     }
 }

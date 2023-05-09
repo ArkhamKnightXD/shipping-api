@@ -52,7 +52,7 @@ public class JsoupService {
     }
 
 
-    public List<Ship> getFavoriteShipList() {
+    public List<Ship> getFavoriteShips() {
 
         List<Ship> list = new ArrayList<>();
 

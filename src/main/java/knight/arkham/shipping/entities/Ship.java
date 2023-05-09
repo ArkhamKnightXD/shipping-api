@@ -6,11 +6,8 @@ import java.io.Serializable;
 
 @Data
 @NoArgsConstructor
-//@Entity
 public class Ship implements Serializable {
 
-//    @Id
-//    @GeneratedValue
     private Long id;
 
     private String shipName;

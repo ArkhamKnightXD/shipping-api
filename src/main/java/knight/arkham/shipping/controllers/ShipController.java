@@ -32,6 +32,6 @@ public class ShipController {
     @Operation(summary = "Get Favorite Ship Data", description = "Get all favorite ship data available")
     public ResponseEntity<List<Ship>> getFavoriteShipList() {
 
-        return new ResponseEntity<>(jsoupService.getFavoriteShipList(), HttpStatus.OK);
+        return new ResponseEntity<>(jsoupService.getFavoriteShips(), HttpStatus.OK);
     }
 }
