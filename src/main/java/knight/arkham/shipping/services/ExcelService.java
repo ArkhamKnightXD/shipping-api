@@ -14,14 +14,17 @@ public class ExcelService {
     public void readExcelFile(String filenamePath, String sheetName){
         try {
 
-            var file = new FileInputStream(filenamePath);
+            var excelFile = new FileInputStream(filenamePath);
 
-            var workbook = new XSSFWorkbook(file);
-            var firstSheet = workbook.getSheet(sheetName);
+            var workbook = new XSSFWorkbook(excelFile);
 
-            for (Row nextRow : firstSheet) {
+            var actualSheet = workbook.getSheet(sheetName);
 
-                for (Cell cell : nextRow) {
+            for (Row actualRow : actualSheet) {
+
+                for (Cell cell : actualRow) {
+
+                    System.out.println(cell.getRowIndex());
 
                     switch (cell.getCellType()) {
                         case STRING:
@@ -37,7 +40,7 @@ public class ExcelService {
             }
 
             workbook.close();
-            file.close();
+            excelFile.close();
 
         } catch (IOException e) {
             e.printStackTrace();
