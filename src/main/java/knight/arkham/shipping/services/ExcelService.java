@@ -24,7 +24,7 @@ public class ExcelService {
 
                 for (Cell cell : actualRow) {
 
-                    System.out.println(cell.getRowIndex());
+//                    System.out.println(cell.getRowIndex());
 
                     switch (cell.getCellType()) {
                         case STRING:
